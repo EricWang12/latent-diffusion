@@ -26,18 +26,17 @@ model:
 data:
   target: main.DataModuleFromConfig
   params:
-    batch_size: 12
+    batch_size: 4
     wrap: True
     train:
-      target: ldm.data.imagenet.ImageNetSRTrain
+      target: ldm.data.lsun.THUman64Train
       params:
-        size: 256
-        degradation: pil_nearest
+        size: 64
     validation:
-      target: ldm.data.imagenet.ImageNetSRValidation
+      target: ldm.data.lsun.THUman64Test
       params:
-        size: 256
-        degradation: pil_nearest
+        size: 64
+        data_root: data/thuman/test
 
 lightning:
   callbacks:

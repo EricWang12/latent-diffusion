@@ -59,14 +59,24 @@ class LSUNBase(Dataset):
         return example
 
 
-class LSUNChurchesTrain(LSUNBase):
+class THUmanTrain(LSUNBase):
     def __init__(self, **kwargs):
         super().__init__(txt_file="data/thuman/train.txt", data_root="data/thuman/train", **kwargs)
 
 
-class LSUNChurchesValidation(LSUNBase):
+class THUmanTest(LSUNBase):
     def __init__(self, flip_p=0., **kwargs):
         super().__init__(txt_file="data/thuman/test.txt", data_root="data/thuman/test",
+                         flip_p=flip_p, **kwargs)
+
+class THUman64Train(LSUNBase):
+    def __init__(self, **kwargs):
+        super().__init__(txt_file="data/thuman/train.txt", data_root="data/thuman_64/train", **kwargs)
+
+
+class THUman64Test(LSUNBase):
+    def __init__(self, flip_p=0., **kwargs):
+        super().__init__(txt_file="data/thuman/test.txt", data_root="data/thuman_64/test",
                          flip_p=flip_p, **kwargs)
 
 
