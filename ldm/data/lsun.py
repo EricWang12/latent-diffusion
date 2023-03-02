@@ -61,12 +61,12 @@ class LSUNBase(Dataset):
 
 class THUmanTrain(LSUNBase):
     def __init__(self, **kwargs):
-        super().__init__(txt_file="data/thuman/train.txt", data_root="data/thuman/train", **kwargs)
+        super().__init__(txt_file="data/thuman/train.txt", **kwargs)
 
 
 class THUmanTest(LSUNBase):
     def __init__(self, flip_p=0., **kwargs):
-        super().__init__(txt_file="data/thuman/test.txt", data_root="data/thuman/test",
+        super().__init__(txt_file="data/thuman/test.txt", 
                          flip_p=flip_p, **kwargs)
 
 class THUman64Train(LSUNBase):

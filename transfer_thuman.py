@@ -36,11 +36,11 @@ def copy_and_split_images(image_paths, output_dir):
         shutil.copy(image_path, output_path)
 
 # # Example usage:
-# image_paths = get_image_paths('/media/exx/8TB1/ewang/CODE/DiT/results/THuman_random')
-# output_dir = '/media/exx/8TB1/ewang/CODE/latent-diffusion/thuman'
-# os.makedirs(os.path.join(output_dir, 'train'))
-# os.makedirs(os.path.join(output_dir, 'test'))
-# copy_and_split_images(image_paths, output_dir)
+image_paths = get_image_paths('data/THuman_random_hori_64')
+output_dir = 'data/thuman_hori_64'
+os.makedirs(os.path.join(output_dir, 'train'))
+os.makedirs(os.path.join(output_dir, 'test'))
+copy_and_split_images(image_paths, output_dir)
 
 
 def save_file_names_to_txt(directory, output_file):
@@ -53,5 +53,5 @@ def save_file_names_to_txt(directory, output_file):
                 f.write(f"{filename}\n")
 
 
-save_file_names_to_txt("/media/exx/8TB1/ewang/CODE/latent-diffusion/thuman/train", "thuman/train.txt")
-save_file_names_to_txt("/media/exx/8TB1/ewang/CODE/latent-diffusion/thuman/test", "thuman/test.txt")
+save_file_names_to_txt(f"{output_dir}/train", f"{output_dir}/train.txt")
+save_file_names_to_txt(f"{output_dir}/test",  f"{output_dir}/test.txt")
